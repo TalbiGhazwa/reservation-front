@@ -10,7 +10,7 @@
         <ng-container *ngIf="autorisationService.isAdmin()">
             <button mat-stroked-button class="btn btn-primary me-2" routerLink="/admin/listeEvenement">Liste Evenement </button>
             <button mat-stroked-button class="btn btn-primary me-2" routerLink="/admin/listeCategorie"> Liste Catégorie</button>
-            <button mat-stroked-button class="btn btn-primary me-2" routerLink="/admin/listeClient"><b>test</b> Liste Clients</button>
+            <button mat-stroked-button class="btn btn-primary me-2" routerLink="/admin/listeClient"> Liste Clients</button>
         </ng-container>
             
         </div>
@@ -29,7 +29,7 @@
         <ng-template #loggedIn>
             <button routerLink="/index"> Accueil </button>
 
-            <button  class="btn btn-primary me-2" (click)="deconnecter()"> <!--en fait une methode-->
+            <button  class="btn btn-primary me-2" (click)="deconnecter()">
                 Déconnecter 
             </button>            
         </ng-template> 
