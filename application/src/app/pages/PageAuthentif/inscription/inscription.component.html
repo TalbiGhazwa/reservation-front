@@ -15,8 +15,8 @@
             
               <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="erreur">
                 <div *ngIf="nom.errors?.['required']">veuillez tapez votre nom</div>
-                <div *ngIf="nom.errors?.['maxlength']">Votre nom doit etre inferieure a 255 charactére </div>
-                <div *ngIf="prenom.errors?.['pattern']">nom invalid</div>
+                <div *ngIf="nom.errors?.['maxlength']">Votre nom doit etre inferieur à 255 charactére </div>
+                <div *ngIf="prenom.errors?.['pattern']">nom invalide</div>
               </div>
 
 
@@ -30,20 +30,20 @@
               <div *ngIf="prenom.invalid &&(prenom.dirty || prenom.touched)" class="erreur">
 
                 <div *ngIf="prenom.errors?.['required']"> Veuillez tapez votre prénom</div>
-                <div *ngIf="prenom.errors?.['maxlength']">Votre prenom doit etre inferieure a 255 charactére </div>
-                <div *ngIf="prenom.errors?.['pattern']">Prenom invalid</div>
+                <div *ngIf="prenom.errors?.['maxlength']">Votre prenom doit etre inferieur à 255 charactére </div>
+                <div *ngIf="prenom.errors?.['pattern']">Prenom invalide</div>
               </div>
             </div>
         
         
           <div class="mb-3">
             <label for="Email" class="form-label"><b>Email :</b></label>
-            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email" ngModel #email ="ngModel" email required>
+            <input type="email" class="form-control" id="Email"  name="email" ngModel #email ="ngModel" required>
           
             <div *ngIf="email.invalid &&(email.dirty || email.touched)" class="erreur">
 
               <div *ngIf="email.errors?.['required']"> Veuillez tapez votre Email</div>
-              <div *ngIf="email.errors?.['email']"> Email invalid</div>
+              <div *ngIf="email.errors?.['email']"> Email invalide</div>
               
             </div>
           </div>
