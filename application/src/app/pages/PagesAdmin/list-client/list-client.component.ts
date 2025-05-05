@@ -24,7 +24,7 @@ getClient(): void{
       this.clients = data
     },
     error:(erreur) =>{
-      console.error('erreur lors de la recuperation du client: ', erreur)
+      alert (erreur)
     }
 
   })

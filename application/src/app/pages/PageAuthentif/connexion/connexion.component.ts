@@ -18,9 +18,9 @@ export class ConnexionComponent {
 
   //  le role lors de connexion => client || admin
 toConnect(form:NgForm):void {
-  console.log(form.value)
+  
   this.autorisationService.connexion(form.value).subscribe((data:any)=>{
-    console.log(data)
+    
     localStorage.setItem("access_token", data.access_token)
     localStorage.setItem("role",data.role)
     const access_token = this.autorisationService.getRole()

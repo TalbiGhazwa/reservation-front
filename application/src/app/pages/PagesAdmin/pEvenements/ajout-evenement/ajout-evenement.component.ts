@@ -34,18 +34,18 @@ export class AjoutEvenementComponent implements OnInit {
     this.msg = "Bienvenue !! c la page d'ajout d'evennement"
 
     this.id = this.activatedRoute.snapshot.params["id"]
-    console.log(this.id)
+
     this.catService.listCategorie().subscribe((rep: Categorie[]) => { // =>appel methode pour affiche liste
       this.categorie = rep
-      console.log(this.categorie)
+     
     })
   }
 
   ajoutEvenement(form: NgForm) {
-    console.log(form.value)
+   
 
     this.evnService.ajoutEvenement(this.event).subscribe((data:Evenement)=>{
-      console.log(data)
+      
      /*  next: (rep) => {
         alert('evennement ajouter avec succée')
         this.router.navigate(['/admin/listeEvenement']) // redirection vers url /admin/evenement

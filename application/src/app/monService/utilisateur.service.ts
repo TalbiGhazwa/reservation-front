@@ -1,12 +1,13 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
+import { environnement } from '../environnement/environnement';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilisateurService {
-  urlpath = "https://reservation-ccit.onrender.com/api"
+  
   constructor(private http : HttpClient) { }
 
 

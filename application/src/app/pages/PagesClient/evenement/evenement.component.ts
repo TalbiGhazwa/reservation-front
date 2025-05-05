@@ -22,12 +22,12 @@ this.router.navigate(['/detailEvenement',{id}])
   ngOnInit(): void {  
      this.catService.listCategorie().subscribe((rep:Categorie[])=>{ 
         this.listCategory = rep
-        console.log(this.listCategory)
+        
       })
       this.evnService.listEvenement().subscribe((rep:Evenement[])=>{ 
         this.listEvenement = rep
 
-        console.log(this.listEvenement)
+        
       })
 
       

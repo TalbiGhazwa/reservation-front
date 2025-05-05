@@ -27,7 +27,7 @@ this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
       this.evnService.listEvenementAdmin().subscribe((rep:Evenement[])=>{ 
         this.listEvenement = rep
 
-        console.log(this.listEvenement)
+        
       })
     }else{
       this.router.navigate(['/connexion'])

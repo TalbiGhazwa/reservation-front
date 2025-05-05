@@ -22,7 +22,7 @@ export class ListCategorieComponent implements OnInit{
 ngOnInit(): void {
   this.catService.listCategorie().subscribe((rep:Categorie[])=>{ // =>appel methode pour affiche liste
     this.listCategory = rep
-    console.log(this.listCategory)
+    
   })
 }
 cat: Categorie={
