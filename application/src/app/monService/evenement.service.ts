@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Categorie } from '../monClass/categorie';
 import { Evenement } from '../monClass/evenement';
+import { environnement } from '../environnement/environnement';
  
 
 @Injectable({
@@ -12,8 +13,7 @@ import { Evenement } from '../monClass/evenement';
 //integration => connexion
 
 export class EvenementService {
-  urlpath = "https://reservation-ccit.onrender.com/api/public"  // url back pour tout les utilisateur
-  urlAdmin = "https://reservation-ccit.onrender.com/api/admin"   // url back pour admin
+ 
 
   constructor(private http:HttpClient) { } 
 
@@ -25,16 +25,16 @@ export class EvenementService {
 
 public listEvenement():Observable <Evenement[]>
 {
-  return this.http.get<Evenement[]>(`${this.urlpath+"/evenements"}`)
+  return this.http.get<Evenement[]>(`${environnement.urlpath+"/evenements"}`)
 }
 
 public listEvenementAdmin():Observable <Evenement[]>
 {
-  return this.http.get<Evenement[]>(`${this.urlAdmin+"/evenements"}`)
+  return this.http.get<Evenement[]>(`${environnement.urlAdmin+"/evenements"}`)
 }
 
 public ajoutEvenement(event : Evenement):Observable <Evenement>{
-  return this.http.post<Evenement>(`${this.urlAdmin}/evenements`, event).pipe(
+  return this.http.post<Evenement>(`${environnement.urlAdmin}/evenements`, event).pipe(
     catchError(this.gestionErreur)
   )
 }
@@ -42,11 +42,11 @@ public ajoutEvenement(event : Evenement):Observable <Evenement>{
 // affiche evendetail event par id
 
 getEvenementById(id: number): Observable<any> {
-  return this.http.get<any>(`${this.urlpath}/evenements/${id}`);
+  return this.http.get<any>(`${environnement.urlpath}/evenements/${id}`);
 }
 
 getEvenementByAdmin(id: number): Observable<any> {
-  return this.http.get<any>(`${this.urlAdmin}/evenements/${id}`);
+  return this.http.get<any>(`${environnement.urlAdmin}/evenements/${id}`);
 }
 
 //gestion d'erreur

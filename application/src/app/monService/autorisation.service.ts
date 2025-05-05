@@ -1,18 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environnement } from '../environnement/environnement';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutorisationService {
 
-  private urlAPI = 'https://reservation-ccit.onrender.com/api'
+ 
 
   constructor( private http : HttpClient) { }
 
 remplissage(doneeUtilisateur:any) : Observable<any>{
-    return this.http.post (`${this.urlAPI}/inscription`, doneeUtilisateur)
+    return this.http.post (`${environnement.autorisationURL}/inscription`, doneeUtilisateur)
   }
 
 isAuthentifi():boolean{
@@ -20,7 +21,7 @@ isAuthentifi():boolean{
 }
 
 connexion(infoIdentif : any):Observable<any> {
-  return this.http.post(`${this.urlAPI}/connexion`, infoIdentif)
+  return this.http.post(`${environnement.autorisationURL}/connexion`, infoIdentif)
 
 }
 

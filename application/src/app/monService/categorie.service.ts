@@ -2,6 +2,7 @@ import { HttpClient , HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Categorie } from '../monClass/categorie';
+import { environnement } from '../environnement/environnement';
  
 
 @Injectable({
@@ -11,8 +12,7 @@ import { Categorie } from '../monClass/categorie';
 //integration => connexion
 
 export class CategorieService {
-  urlpath = "https://reservation-ccit.onrender.com/api/public"  //url back
-  urlAdmin = "https://reservation-ccit.onrender.com/api/admin"
+  
 
   constructor(private http:HttpClient) { } 
 
@@ -21,15 +21,15 @@ export class CategorieService {
 // Categorie => liste , ajout
 
   public listCategorie():Observable<Categorie[]>{  //methode permet d'afficher la liste des categorie pour client => notre class
-    return this.http.get<Categorie[]>(`${this.urlpath+"/categori"}`)
+    return this.http.get<Categorie[]>(`${environnement.urlpath+"/categori"}`)
   }
 
   public listCategorieAdmin():Observable<Categorie[]>{  //methode permet d'afficher la liste des categorie pour admin => notre class
-    return this.http.get<Categorie[]>(`${this.urlAdmin+"/categori"}`)
+    return this.http.get<Categorie[]>(`${environnement.urlAdmin+"/categori"}`)
   }
 
   public ajoutCategorie(cat:Categorie):Observable<Categorie>{          //  => ajout categorie
-    return this.http.post<Categorie>(`${this.urlAdmin}/categori`,cat).pipe(
+    return this.http.post<Categorie>(`${environnement.urlAdmin}/categori`,cat).pipe(
       catchError(this.gestionErreur)
     )
   }
