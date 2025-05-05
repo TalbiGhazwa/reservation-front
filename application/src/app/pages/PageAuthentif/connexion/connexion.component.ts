@@ -16,7 +16,7 @@ export class ConnexionComponent {
 
   constructor(private autorisationService : AutorisationService, private router : Router){}
 
-  // methode pour connexion role = client || admin
+  //  le role lors de connexion => client || admin
 toConnect(form:NgForm):void {
   console.log(form.value)
   this.autorisationService.connexion(form.value).subscribe((data:any)=>{
@@ -37,6 +37,4 @@ toConnect(form:NgForm):void {
   })
 
 }
-
-
 }
