@@ -1,10 +1,10 @@
-<h1 align="center">Proj Resrvation</h1>
+<h1 align="center">Reservation E_ticket</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
 </p>
 
 <p align="center">
@@ -21,23 +21,26 @@
 
 ## :dart: About ##
 
-Describe your project
+
+Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs JO.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Gestion evenement;\
+:heavy_check_mark: Gestion categorties ;\
+:heavy_check_mark: Gestion client ;\
+:heavy_check_mark: Gestion de payement ;\
+:heavy_check_mark: Gestion de génération des billets ;\
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
 - [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
+- [Angular](https://angular.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Angular Material ](https://material.angular.dev/ ) 
 
 ## :white_check_mark: Requirements ##
 
@@ -47,16 +50,16 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/proj-resrvation
+$ git clone https://github.com/TalbiGhazwa/reservation-front
 
 # Access
-$ cd proj-resrvation
+$ cd reservation-front
 
 # Install dependencies
-$ yarn
+$ npm i
 
 # Run the project
-$ yarn start
+$ ng s
 
 # The server will initialize in the <http://localhost:3000>
 ```
@@ -66,7 +69,7 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
 
 &#xa0;
 
