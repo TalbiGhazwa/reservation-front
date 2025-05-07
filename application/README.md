@@ -1,27 +1,73 @@
-# ProjResrvation
+<h1 align="center">Proj Resrvation</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/proj-resrvation?color=56BEB8">
+</p>
 
-## Development server
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+## :dart: About ##
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Describe your project
 
-## Build
+## :sparkles: Features ##
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+:heavy_check_mark: Feature 1;\
+:heavy_check_mark: Feature 2;\
+:heavy_check_mark: Feature 3;
 
-## Running unit tests
+## :rocket: Technologies ##
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The following tools were used in this project:
 
-## Running end-to-end tests
+- [Expo](https://expo.io/)
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## :white_check_mark: Requirements ##
 
-## Further help
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## :checkered_flag: Starting ##
+
+```bash
+# Clone this project
+$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/proj-resrvation
+
+# Access
+$ cd proj-resrvation
+
+# Install dependencies
+$ yarn
+
+# Run the project
+$ yarn start
+
+# The server will initialize in the <http://localhost:3000>
+```
+
+## :memo: License ##
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
+
+
+Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>
