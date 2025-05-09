@@ -61,7 +61,7 @@ $ npm i
 # Run the project
 $ ng s
 
-# The server will initialize in the <http://localhost:3000>
+# The server will initialize in the <http://localhost:4200>
 ```
 
 ## :memo: License ##
