@@ -31,11 +31,13 @@ export class AjoutEvenementComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private catService: CategorieService, private router: Router, private evnService: EvenementService) { }
   ngOnInit(): void {
-    this.msg = "Bienvenue !! c la page d'ajout d'evennement"
 
     this.id = this.activatedRoute.snapshot.params["id"]
-
-    this.catService.listCategorie().subscribe((rep: Categorie[]) => { // =>appel methode pour affiche liste
+    this.evnService.getEvenementById(this.id).subscribe((data:any)=>{
+      console.log(data)
+      this.event = data
+    })
+    this.catService.listCategorie().subscribe((rep: Categorie[]) => { 
       this.categorie = rep
      
     })

@@ -37,7 +37,7 @@ this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
 
   }
   modifEvenement(id: number) {
-this.router.navigate(['/admin/listeEvenement', {id} ])
+this.router.navigate(['/admin/pEvenement/modifEvenement', {id} ])
     }
 
     supprimEvent() {
