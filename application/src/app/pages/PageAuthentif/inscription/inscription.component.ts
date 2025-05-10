@@ -26,6 +26,7 @@ Remplissages():void {
       this.router.navigate(['/connexion'])
     },
     error: (erreur) =>{
+      console.log(erreur)
       alert(erreur.error.error || 'Une erreur est se produit');
       
 

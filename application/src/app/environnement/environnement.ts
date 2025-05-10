@@ -1,6 +1,9 @@
 export const environnement = {
-    urlpath : "https://reservation-ccit.onrender.com/api/public",
-    urlAdmin : "https://reservation-ccit.onrender.com/api/admin",
-    autorisationURL : 'https://reservation-ccit.onrender.com/api'
+    urlpath : "http://localhost:5000/api/public",
+    urlAdmin : "http://localhost:5000/api/admin",
+    autorisationURL : 'http://localhost:5000/api'
+   // autorisationURL : 'https://reservation-ccit.onrender.com/api'
+  // urlpath : "https://reservation-ccit.onrender.com/api/public",
+   // urlAdmin : "https://reservation-ccit.onrender.com/api/admin",
 
 }
