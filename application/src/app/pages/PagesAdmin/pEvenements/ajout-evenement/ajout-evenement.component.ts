@@ -44,17 +44,17 @@ export class AjoutEvenementComponent implements OnInit {
   ajoutEvenement(form: NgForm) {
    
 
-    this.evnService.ajoutEvenement(this.event).subscribe((data:Evenement)=>{
-      
-     /*  next: (rep) => {
-        alert('evennement ajouter avec succée')
-        this.router.navigate(['/admin/listeEvenement']) // redirection vers url /admin/evenement
-      },
-      error: (error) => {
-        this.msgErreur = error.message
-        alert(this.msgErreur)
-      }
-     */
+    this.evnService.ajoutEvenement(this.event).subscribe((data:any)=>{
+        console.log(data)
+        if(data.message="Événement créé avec succès"){
+          alert(data.message)
+          this.router.navigate(['/admin/listeEvenement'])
+        }else if (data.message!=="Événement créé avec succès"){
+           alert(data.message)
+          this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
+        }
+        
+     
     })
   }
 
