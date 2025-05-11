@@ -28,9 +28,17 @@ public listEvenement():Observable <Evenement[]>
   return this.http.get<Evenement[]>(`${environnement.urlpath+"/evenements"}`)
 }
 
+
+
+
 public listEvenementAdmin():Observable <Evenement[]>
 {
   return this.http.get<Evenement[]>(`${environnement.urlAdmin+"/evenements"}`)
+}
+
+public delete(id:number):Observable <Evenement>
+{
+  return this.http.delete<Evenement>(`${environnement.urlAdmin+"/evenements/"+id}`)
 }
 
 public ajoutEvenement(event : Evenement):Observable <Evenement>{

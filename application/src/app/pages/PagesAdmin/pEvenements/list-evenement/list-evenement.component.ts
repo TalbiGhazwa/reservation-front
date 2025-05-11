@@ -40,7 +40,16 @@ this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
 this.router.navigate(['/admin/pEvenement/modifEvenement', {id} ])
     }
 
-    supprimEvent() {
-      throw new Error('Method not implemented.');
+    supprimEvent(id:number) {
+      if(confirm("vous le vous supprimer cette evenemente ?")){
+        this.evnService.delete(id).subscribe((data:any)=>{
+          if(data){
+        alert("evenement supprimer avec sucess")
+
+          }
+        location.reload()
+      })
       }
+      
+    }
 }
