@@ -12,7 +12,16 @@ import { environnement } from '../environnement/environnement';
 //integration => connexion
 
 export class CategorieService {
-  
+  editCat(id: any, cat: Categorie):Observable<Categorie> {
+    return this.http.put<Categorie>(`${environnement.urlAdmin+"/categori/"+id}` , cat)
+  }
+  getCatByID(id: number):Observable<Categorie> {
+    return this.http.get<Categorie>(`${environnement.urlAdmin+"/categori/"+id}`)
+
+  }
+   delteCat(id: any):Observable<Categorie> {
+    return this.http.delete<Categorie>(`${environnement.urlAdmin+"/categori/"+id}` )
+  }
 
   constructor(private http:HttpClient) { } 
 

@@ -12,6 +12,41 @@ import { Categorie } from 'src/app/monClass/categorie';
 
 
 export class ListCategorieComponent implements OnInit{
+deleteCat(id: number) {
+if(confirm("vous le vouss supprimer le categories est le evenement relie avec cette categories")){
+  this.catService.delteCat(id).subscribe((data:any)=>{
+  alert("categories est evenement relie a ete supprimer")
+  this.listCat()
+  })
+}
+}
+  updatedCat:   Categorie={
+    id: 0,
+    nomCategori: ''
+  };
+updateCat(id: number) {
+this.catService.getCatByID(id).subscribe((data:Categorie)=>{
+  this.updatedCat=data
+  console.log(this.updatedCat)
+})
+}
+modifierCat(form: NgForm) {
+ this.catService.editCat(this.updatedCat.id , this.updatedCat).subscribe({
+    next:(rep)=>{
+      alert('category modifier avec succée')
+        this.listCat()
+
+      location.reload() // actualisation
+      this.msgErreur = '' //clear
+    },
+
+    error: (error)=>{
+      this.msgErreur = error.message
+      alert(this.msgErreur)
+    }
+    
+  })
+}
   listCategory: Categorie[];
   msgErreur : string;
 
@@ -20,6 +55,9 @@ export class ListCategorieComponent implements OnInit{
   }
 
 ngOnInit(): void {
+  this.listCat()
+}
+public listCat(){
   this.catService.listCategorie().subscribe((rep:Categorie[])=>{ // =>appel methode pour affiche liste
     this.listCategory = rep
     
@@ -34,6 +72,8 @@ ajoutCategorie(form:NgForm) { // fn ajout cat
   this.catService.ajoutCategorie(this.cat).subscribe({
     next:(rep)=>{
       alert('category ajoutée avec succée')
+        this.listCat()
+
       location.reload() // actualisation
       this.msgErreur = '' //clear
     },

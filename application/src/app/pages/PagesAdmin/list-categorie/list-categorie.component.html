@@ -32,8 +32,8 @@ Ajouter Categorie
             
           
             <td>
-                <button class="btn btn-success me-2"> modifier </button>
-                <button class="btn btn-danger me-2"> supprimer </button>
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="updateCat(c.id)"> modifier </button>
+                <button class="btn btn-danger me-2" (click)="deleteCat(c.id)"> supprimer </button>
             </td>
           </tr>
         
@@ -58,6 +58,26 @@ Ajouter Categorie
           <label>Nom Categorie</label>
           <input class="form-control" type="text" name="nomCat" [(ngModel)]="cat.nomCategori">
           <button type="submit" class="btn btn-success mt-2"> Ajouter </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier  categorie</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <form #form ="ngForm" (ngSubmit)="modifierCat(form)">
+          <label>Nom Categorie</label>
+          <input class="form-control" type="text" name="nomCat" [(ngModel)]="updatedCat.nomCategori">
+          <button type="submit" class="btn btn-success mt-2"> Modifier </button>
         </form>
         
       </div>

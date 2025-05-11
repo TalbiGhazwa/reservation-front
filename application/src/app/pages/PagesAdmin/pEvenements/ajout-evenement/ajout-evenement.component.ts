@@ -60,4 +60,20 @@ export class AjoutEvenementComponent implements OnInit {
     })
   }
 
+  modifEvenement(form: NgForm) {
+   
+
+    this.evnService.editEvent(this.id , this.event).subscribe((data:any)=>{
+        console.log(data)
+        if(data.message="Événement modifier avec succès"){
+          alert(data.message)
+          this.router.navigate(['/admin/listeEvenement'])
+        }else if (data.message!=="Événement modifier avec succès"){
+           alert(data.message)
+          this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
+        }
+        
+     
+    })
+  }
 }
