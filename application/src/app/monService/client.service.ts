@@ -11,7 +11,7 @@ export class ClientService {
 
   constructor(private http:HttpClient) { }
   
-  getListClient():Observable<any>{
-    return this.http.get<any>(`${environnement.urlAdmin}`)
+  getListClient():Observable<any[]>{
+    return this.http.get<any[]>(`${environnement.urlAdmin+"/clients"}`)
   }
 }

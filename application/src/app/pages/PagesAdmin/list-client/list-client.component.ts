@@ -9,6 +9,7 @@ import { ClientService } from 'src/app/monService/client.service';
 export class ListClientComponent implements OnInit{
   router: any;
 clients: any[];
+  nbrClient: number;
 
 constructor(private clientService : ClientService){}
 
@@ -19,14 +20,10 @@ constructor(private clientService : ClientService){}
 
   }
 getClient(): void{
-  this.clientService.getListClient().subscribe({
-    next: (data) =>{
-      this.clients = data
-    },
-    error:(erreur) =>{
-      alert (erreur)
-    }
-
+  this.clientService.getListClient().subscribe((data:any[])=>{
+     console.log(data)
+     this.clients=data
+    this.nbrClient=data.length
   })
 }
   ajoutClient() {

@@ -16,9 +16,8 @@
             <th scope="col">Nom</th>
             <th scope="col">Prénom</th>
             <th scope="col">Email</th>
-            <th>Action</th>
-            <th><button mat-stroked-button class="btn btn-success" (click)="ajoutClient()">Ajout client</button></th>
-          </tr>
+            <th scope="col">Role</th>
+            </tr>
         </thead>
         <tbody>
           <tr *ngFor="let C of clients; let i = index">
@@ -26,13 +25,11 @@
             <td> {{C.nomUtilisateur}} </td>
             <td> {{C.prenomUtilisateur}} </td>
             <td> {{C.email}}</td>
-            <td>
-                <button class="me-2"> Modifier </button>
-                <button class="me-2"> Supprimer </button>
-                
-            </td>
+            <td> {{C.role}}</td>
+            
+            
           </tr>
-          <tr *ngIf="clients.length === 0">
+          <tr *ngIf="nbrClient === 0">
             <td colspan="5"> Aucun client </td>
 
           </tr>
