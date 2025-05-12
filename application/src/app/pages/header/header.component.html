@@ -1,3 +1,4 @@
+
  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="color: white;">
   <div class="container-fluid">
     <a class="navbar-brand me-4" routerLink="/index">Jeux Olympique</a>
@@ -15,7 +16,7 @@
           <a class="nav-link" routerLink="/evenement">Evenement</a>
         </li>
 
-        <!-- Pour l'admin -->
+        <!-- barre de navigation admin -->
         <ng-container *ngIf="autorisationService.isAdmin()">
           <li class="nav-item">
             <a class="nav-link" routerLink="/admin/listeEvenement">Liste Evenement</a>
@@ -29,7 +30,7 @@
         </ng-container>
       </ul>
 
-      <!-- Non connecté -->
+      <!-- barre de navigation aux Non connecté -->
       <ng-container *ngIf="!autorisationService.isAuthentifi(); else loggedIn">
         <div class="d-flex">
           <a class="btn btn-outline-light me-2" routerLink="/inscription">Inscription</a>
@@ -37,7 +38,7 @@
         </div>
       </ng-container>
 
-      <!-- Connecté -->
+      <!-- barre de navigation aux Connecté -->
       <ng-template #loggedIn>
         <div class="d-flex">
           <button class="btn btn-outline-light" (click)="deconnecter()">Déconnecter</button>
@@ -46,3 +47,4 @@
     </div>
   </div>
 </nav>
+ 

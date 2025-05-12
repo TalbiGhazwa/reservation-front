@@ -22,7 +22,7 @@
 ## :dart: About ##
 
 
-Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs JO.
+Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs Jeux Olympique JO-2025.
 
 ## :sparkles: Features ##
 
