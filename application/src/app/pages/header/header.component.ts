@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AutorisationService } from 'src/app/monService/autorisation.service';
+import { PanierCommandeService } from 'src/app/monService/PanierCommande.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,16 @@ import { AutorisationService } from 'src/app/monService/autorisation.service';
 })
 
 
-export class HeaderComponent {
-  constructor ( public autorisationService : AutorisationService, private router : Router) {}
+export class HeaderComponent implements OnInit {
+  panierCount: number;
+  constructor ( public autorisationService : AutorisationService, 
+    private panierService:PanierCommandeService,private router : Router) {}
+  ngOnInit(): void {
+this.panierService.getPanierCount().subscribe(count => {
+  console.log(count)
+    this.panierCount = count;
+  });
+  }
 
   deconnecter() : void {
   this.autorisationService.deconnecter()

@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-3 mb-3">
+        <div class="col-12 col-md-3 mb-3">
             <div class="card mt-5 p-3">
                 <div class="mt-2">
                     <label for="search">Rechercher ..</label><hr>
@@ -13,13 +13,13 @@
                 </ul>
             </div>
         </div>
-        <div class="col-9 mt-5">
+        <div class="col-12 col-md-9 mt-4">
             <div class="container">
     
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let e of listEvenement">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4" *ngFor="let e of listEvenement">
                         <div class="card shadow-lg border-0 rounded-3 overflow-hidden event-card">
-                          <img src="../../../../assets/images/logo_JO.png" class="card-img-top img-fluid" alt="une image d'evenement">
+                          <img src="../../../../assets/images/photo2JO.jpg" class="card-img-top img-fluid" alt="une image d'evenement">
                           <div class="card-body p-4">
                             <h5 class="card-title fw-bold text-primary">{{ e.nomEvenement }}</h5>
                             <p class="text-muted mb-3">

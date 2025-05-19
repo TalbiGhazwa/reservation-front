@@ -12,6 +12,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { ListCategorieComponent } from './pages/PagesAdmin/list-categorie/list-categorie.component';
 import { ListClientComponent } from './pages/PagesAdmin/list-client/list-client.component';
 import { ListEvenementComponent } from './pages/PagesAdmin/pEvenements/list-evenement/list-evenement.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { InscriptionComponent } from './pages/PageAuthentif/inscription/inscription.component';
 import { ConnexionComponent } from './pages/PageAuthentif/connexion/connexion.component';
@@ -57,7 +58,8 @@ import { AuthInterceptor } from './monService/intercepteur';
     MatIconModule,
     MatToolbarModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule , 
+    ReactiveFormsModule
   ],
   // un fournisseur renvoie le resultat back
   providers: [ 

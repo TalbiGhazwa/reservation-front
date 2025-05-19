@@ -9,32 +9,32 @@ import { AutorisationService } from 'src/app/monService/autorisation.service';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent {
-  infoIdentif={
-    email:'',
-    motPasse:''
+  infoIdentif = {
+    email: '',
+    motPasse: ''
   }
 
-  constructor(private autorisationService : AutorisationService, private router : Router){}
+  constructor(private autorisationService: AutorisationService, private router: Router) { }
 
-  //  le role lors de connexion => client || admin
-toConnect(form:NgForm):void {
+  //vérification du role lors du connexion (administrateur ou client)
   
-  this.autorisationService.connexion(form.value).subscribe((data:any)=>{
-    
-    localStorage.setItem("access_token", data.access_token)
-    localStorage.setItem("role",data.role)
-    const access_token = this.autorisationService.getRole()
-    const role = this.autorisationService.getToken()
+  toConnect(form: NgForm): void {
+    this.autorisationService.connexion(form.value).subscribe((data: any) => {
 
-    if (access_token && role){
-      alert ("Bienvenue !!")
-      this.router.navigate(['/'])
-    }
-    else {
-      alert ("veuiller verifier votre email ou mot de passe !! ")
-      this.router.navigate(['/login'])
-    }
-  })
+      localStorage.setItem("access_token", data.access_token)
+      localStorage.setItem("role", data.role)
+      const access_token = this.autorisationService.getRole()
+      const role = this.autorisationService.getToken()
 
-}
+      if (access_token && role) {
+        alert("Bienvenue !!")
+        this.router.navigate(['/'])
+      }
+      else {
+        alert("veuiller verifier votre email ou mot de passe !! ")
+        this.router.navigate(['/login'])
+      }
+    })
+
+  }
 }
