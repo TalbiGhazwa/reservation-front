@@ -58,7 +58,7 @@ ngOnInit(): void {
   this.listCat()
 }
 public listCat(){
-  this.catService.listCategorie().subscribe((rep:Categorie[])=>{ // =>appel methode pour affiche liste
+  this.catService.listCategorie().subscribe((rep:Categorie[])=>{ // =>appel methode pour afficher la liste
     this.listCategory = rep
     
   })
@@ -68,10 +68,10 @@ cat: Categorie={
   nomCategori: ''
 };
 
-ajoutCategorie(form:NgForm) { // fn ajout cat
+ajoutCategorie(form:NgForm) { // fn ajout categori
   this.catService.ajoutCategorie(this.cat).subscribe({
     next:(rep)=>{
-      alert('category ajoutée avec succée')
+      alert('category ajoutée avec succée') // message de succée de modification
         this.listCat()
 
       location.reload() // actualisation
@@ -79,7 +79,7 @@ ajoutCategorie(form:NgForm) { // fn ajout cat
     },
 
     error: (error)=>{
-      this.msgErreur = error.message
+      this.msgErreur = error.message // message d'erreur en cas d'erreur
       alert(this.msgErreur)
     }
     

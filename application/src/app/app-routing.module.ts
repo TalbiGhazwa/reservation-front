@@ -18,7 +18,7 @@ import { InscriptionComponent } from './pages/PageAuthentif/inscription/inscript
 import { AjoutEvenementComponent } from './pages/PagesAdmin/pEvenements/ajout-evenement/ajout-evenement.component';
 import { NoAutoriserComponent } from './pages/no-autoriser/no-autoriser.component';
 
-
+// les path de mon projet
 const routes: Routes = [
   {path:"",component:IndexComponent},
   {path:"index",component:IndexComponent},

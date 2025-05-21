@@ -2,9 +2,10 @@
 
     <div class="row">
         <div class="col-12 col-md-3 mb-3">
+            <!-- inserer une carte contient les categorie existant-->
             <div class="card mt-5 p-3">
                 <div class="mt-2">
-                    <label for="search">Rechercher ..</label><hr>
+                    <label for="search"><strong>liste des categories :</strong> </label><hr>
                 </div>
                <input type="search" class="form-control mt-p-3 " title="recherche" placeholder="chercher par categorie .."> <br>
                 <ul style="text-decoration: none; list-style-type: none;" *ngFor="let c of listCategory">
@@ -14,6 +15,7 @@
             </div>
         </div>
         <div class="col-12 col-md-9 mt-4">
+             <!-- inserer un container contient des cartes et chaque carte cotient des detailles d'un evenement-->
             <div class="container">
     
                 <div class="row">
@@ -23,10 +25,11 @@
                           <div class="card-body p-4">
                             <h5 class="card-title fw-bold text-primary">{{ e.nomEvenement }}</h5>
                             <p class="text-muted mb-3">
-                              <strong class="text-dark">Prix :</strong> <i>{{ e.PrixEvenement }} £</i><br>
+                             
                               <strong class="text-dark">Type :</strong> <i>{{ e.typeEvenement }}</i><br>
                               <strong class="text-dark">Date :</strong> <i>{{ e.dateEvenement | date:'dd/MM/yyyy' }}</i><br>
-                              <strong class="text-dark">Categorie  :</strong> <i>{{ e.categorie.nomCategori }}</i>
+                              <strong class="text-dark">Categorie  :</strong> <i>{{ e.categorie.nomCategori }}</i><br>
+                               <strong class="text-dark">Prix à partir de :</strong> <i>{{ e.PrixEvenement }} £</i><br>
                             </p>
                             <a (click)="goToDetailsEvent(e.id)" class="btn btn-primary w-100">
                               Voir Plus..

@@ -8,25 +8,20 @@ import { environnement } from '../environnement/environnement';
 @Injectable({
   providedIn: 'root'
 })
-
-//integration => connexion
-
 export class CategorieService {
-  editCat(id: any, cat: Categorie):Observable<Categorie> {
+  editCat(id: any, cat: Categorie):Observable<Categorie> { //modif categorie
     return this.http.put<Categorie>(`${environnement.urlAdmin+"/categori/"+id}` , cat)
   }
-  getCatByID(id: number):Observable<Categorie> {
+  getCatByID(id: number):Observable<Categorie> { // obtenir categorie id
     return this.http.get<Categorie>(`${environnement.urlAdmin+"/categori/"+id}`)
-
   }
-   delteCat(id: any):Observable<Categorie> {
+   delteCat(id: any):Observable<Categorie> { // supprimer categorie
     return this.http.delete<Categorie>(`${environnement.urlAdmin+"/categori/"+id}` )
   }
 
   constructor(private http:HttpClient) { } 
 
 //methode =>liaison entre front * back
-
 // Categorie => liste , ajout
 
   public listCategorie():Observable<Categorie[]>{  //methode permet d'afficher la liste des categorie pour client => notre class
@@ -37,14 +32,11 @@ export class CategorieService {
     return this.http.get<Categorie[]>(`${environnement.urlAdmin+"/categori"}`)
   }
 
-  public ajoutCategorie(cat:Categorie):Observable<Categorie>{          //  => ajout categorie
+  public ajoutCategorie(cat:Categorie):Observable<Categorie>{          // ajout categorie
     return this.http.post<Categorie>(`${environnement.urlAdmin}/categori`,cat).pipe(
       catchError(this.gestionErreur)
     )
   }
-
-  
-
 //gestion d'erreur
 private gestionErreur(erreur:HttpErrorResponse){
   let msgErreur = 'erreur unconnu'

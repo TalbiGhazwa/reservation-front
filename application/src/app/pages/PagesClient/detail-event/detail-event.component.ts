@@ -1,9 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Categorie } from 'src/app/monClass/categorie';
-import { Evenement } from 'src/app/monClass/evenement';
-import { EvenementService } from 'src/app/monService/evenement.service';
+// importation
+import { HttpClient } from '@angular/common/http'
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import { Categorie } from 'src/app/monClass/categorie'
+import { Evenement } from 'src/app/monClass/evenement'
+import { EvenementService } from 'src/app/monService/evenement.service'
+import { PanierCommandeService } from 'src/app/monService/PanierCommande.service'
 
 @Component({
   selector: 'app-detail-event',
@@ -12,13 +14,13 @@ import { EvenementService } from 'src/app/monService/evenement.service';
 })
 export class DetailEventComponent implements OnInit{
   predefinedTicketTypes = [
-  { nom: 'Classe A', prix: 30 },
-  { nom: 'Classe B', prix: 20 },
-  { nom: 'Familial', prix: 15 }
+  { nom: 'SOLO', prix: 250 },
+  { nom: 'DUO ', prix: 480 },
+  { nom: 'Familial', prix: 900 }
 ];
 
-selectedTicketTypeNom: string = '';
-quantite: number = 1; // optionnel pour quantité
+selectedTicketTypeNom: string = ''
+quantite: number = 1; 
 
   event: Evenement ={
     id: 0,
@@ -33,43 +35,37 @@ quantite: number = 1; // optionnel pour quantité
       nomCategori: ''
     }
   }; 
-  eventId: number;
+  eventId: number
 
   // appel service evenement
   constructor(
     private http:HttpClient,
     private evenementService: EvenementService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute ,
+    private panierCommandeService:PanierCommandeService
   ) {}
 
   ngOnInit(): void {
-    // declare const eventId  from url 
+    // declare const eventId  depui url 
     this.eventId = +this.route.snapshot.paramMap.get('id')!;
 
     // recherche par id 
     this.evenementService.getEvenementById(this.eventId).subscribe((data) => {
-      this.event = data; 
+      this.event = data
   })
 }
+//ajout au panier
 ajouterAuPanier() {
   const ticket = this.predefinedTicketTypes.find(t => t.nom === this.selectedTicketTypeNom);
   if (!ticket) return alert("Type de ticket non valide");
 
-  const data = {
-    evenement_id: this.eventId,
-    ticket_type_nom: ticket.nom,
-    prix: ticket.prix,
-    quantite: this.quantite
-  };
-
-  this.http.post('http://localhost:5000/api/commandePanier', data, {
-    headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('access_token')
-    }
-  }).subscribe({
-    next: () => alert("Ajouté au panier !"),
-    error: () => alert("Erreur lors de l'ajout")
-  });
+  this.panierCommandeService
+    .ajouterAuPanierDepuisDetail(this.eventId, ticket.nom, ticket.prix, this.quantite)
+    .subscribe({
+      next: () => alert("Ajouté au panier !"),
+      error: () => alert("Veuillez vous connecter !")
+    });
 }
+
 
 }

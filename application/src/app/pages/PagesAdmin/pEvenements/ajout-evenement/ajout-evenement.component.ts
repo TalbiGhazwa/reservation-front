@@ -42,33 +42,27 @@ export class AjoutEvenementComponent implements OnInit {
      
     })
   }
-
+//ajouter evenemnt
   ajoutEvenement(form: NgForm) {
-   
-
     this.evnService.ajoutEvenement(this.event).subscribe((data:any)=>{
-        console.log(data)
-        if(data.message="Événement créé avec succès"){
-          alert(data.message)
-          this.router.navigate(['/admin/listeEvenement'])
-        }else if (data.message!=="Événement créé avec succès"){
+        //console.log(data)
+        if(data.message="Événement créé avec succès"){ // en cas succée d'ajout evenement
+          alert(data.message) 
+          this.router.navigate(['/admin/listeEvenement']) // naviguer vers 
+        }else if (data.message!=="Événement créé avec succès"){ // si erreur se produit
            alert(data.message)
-          this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
+          this.router.navigate(['/admin/pEvenement/ajoutEvenement']) // naviguer vers 
         }
-        
-     
     })
   }
-
+  // modifier un evenement
   modifEvenement(form: NgForm) {
-   
-
     this.evnService.editEvent(this.id , this.event).subscribe((data:any)=>{
-        console.log(data)
-        if(data.message="Événement modifier avec succès"){
-          alert(data.message)
+        //console.log(data)
+        if(data.message="Événement modifier avec succès"){ // en cas de succée de modification
+          alert(data.message) 
           this.router.navigate(['/admin/listeEvenement'])
-        }else if (data.message!=="Événement modifier avec succès"){
+        }else if (data.message!=="Événement modifier avec succès"){ 
            alert(data.message)
           this.router.navigate(['/admin/pEvenement/ajoutEvenement'])
         }

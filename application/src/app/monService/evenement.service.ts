@@ -9,31 +9,17 @@ import { environnement } from '../environnement/environnement';
 @Injectable({
   providedIn: 'root'
 })
-
-//integration => connexion
-
 export class EvenementService {
- 
-
-  constructor(private http:HttpClient) { } 
-
-//methode =>liaison entre front * back
-
-  
-
-// Evennement => liste , ajout
-
+ // Evennement => liste 
+constructor(private http:HttpClient) { } 
 public listEvenement():Observable <Evenement[]>
 {
-  return this.http.get<Evenement[]>(`${environnement.urlpath+"/evenements"}`)
+  return this.http.get<Evenement[]>(`${environnement.urlpath+"/evenements"}`) // appel api liste evenement
 }
 public editEvent(id:number , event:Evenement):Observable <Evenement>
 {
-  return this.http.put<Evenement>(`${environnement.urlAdmin+"/evenements/"+id}`, event)
+  return this.http.put<Evenement>(`${environnement.urlAdmin+"/evenements/"+id}`, event) // appel api modif evenement
 }
-
-
-
 public listEvenementAdmin():Observable <Evenement[]>
 {
   return this.http.get<Evenement[]>(`${environnement.urlAdmin+"/evenements"}`)
@@ -49,17 +35,12 @@ public ajoutEvenement(event : Evenement):Observable <Evenement>{
     catchError(this.gestionErreur)
   )
 }
-
-// affiche evendetail event par id
-
-getEvenementById(id: number): Observable<any> {
+getEvenementById(id: number): Observable<any> {// affichage public des evendetail event id
   return this.http.get<any>(`${environnement.urlpath}/evenements/${id}`);
 }
-
-getEvenementByAdmin(id: number): Observable<any> {
+getEvenementByAdmin(id: number): Observable<any> { // admin obtenir les evenements
   return this.http.get<any>(`${environnement.urlAdmin}/evenements/${id}`);
 }
-
 //gestion d'erreur
 private gestionErreur(erreur:HttpErrorResponse){
   let msgErreur = 'erreur inconnu'

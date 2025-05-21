@@ -8,9 +8,9 @@
     </div>
     <div class="col-4"></div>
   </div>
-  
-  <div class="col-12 col-sm-6 col-lg-4 mb-4"><!--col-12 col-sm-6 col-lg-4 mb-4-->
-    <table class="table table-striped table-hover table-bordered mt-4"> 
+  <!-- insertion d'une tableau  -->
+  <div class="col-4"><!--col-12 col-sm-6 col-lg-4 mb-4-->
+    <table class="table table-striped table-hover table-bordered">
 
         <thead class="table-success">
           <tr>
@@ -21,7 +21,7 @@
             <th scope="col">Role</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody> <!-- remplissage du table avec des information des clients inscrits -->
           <tr *ngFor="let C of clients; let i = index">
             <td scope="row">{{i+1}}</td>
             <td> {{C.nomUtilisateur}} </td>
@@ -31,7 +31,7 @@
             
             
           </tr>
-          <tr *ngIf="nbrClient === 0">
+          <tr *ngIf="nbrClient === 0"> <!-- si il ya pas des client -->
             <td colspan="5"> Aucun client </td>
 
           </tr>

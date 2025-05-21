@@ -21,7 +21,6 @@
 
 ## :dart: About ##
 
-
 Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs Jeux Olympique JO-2025.
 
 ## :sparkles: Features ##
@@ -49,19 +48,19 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 ## :checkered_flag: Starting ##
 
 ```bash
-# Clone this project
+# Cloner le projet
 $ git clone https://github.com/TalbiGhazwa/reservation-front
 
-# Access
+# Accée
 $ cd reservation-front
 
-# Install dependencies
+# Installé les dependences
 $ npm i
 
-# Run the project
+# Run le projet
 $ ng s
 
-# The server will initialize in the <http://localhost:4200>
+# Le serveur s'initialisera dans  <http://localhost:4200>
 ```
 
 ## :memo: License ##
@@ -69,8 +68,8 @@ $ ng s
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 
-Made with :heart: by <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
+Fabriqué par <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
 
 &#xa0;
 
-<a href="#top">Back to top</a>
+<a href="#top">haut de la page</a>

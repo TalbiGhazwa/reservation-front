@@ -6,10 +6,10 @@
         <div class="card-header">
           <h2>Formulaire d'inscription</h2>
         </div><hr>
-
+        <!-- insertion d'un formulaire et controle de saisie -->
         <form #form="ngForm" (ngSubmit)="Remplissages()">
 
-          <!-- Nom -->
+          <!-- controle de saisie pour le Nom -->
           <div class="mb-3">
             <label for="nom" class="form-label"><b>Nom :</b></label>
             <input type="text" class="form-control" id="nom" name="nomUtilisateur"
@@ -24,7 +24,7 @@
             </div>
           </div>
 
-          <!-- Prénom -->
+          <!-- controle de saisie pour le Prénom -->
           <div class="mb-3">
             <label for="prenom" class="form-label"><b>Prénom :</b></label>
             <input type="text" class="form-control" id="prenom" name="prenomUtilisateur"
@@ -39,7 +39,7 @@
             </div>
           </div>
 
-          <!-- Email -->
+          <!-- controle de saisie pour le Email -->
           <div class="mb-3">
             <label for="email" class="form-label"><b>Email :</b></label>
             <input type="email" class="form-control" id="email" name="email"
@@ -51,7 +51,7 @@
             </div>
           </div>
 
-          <!-- Mot de passe -->
+          <!--controle de saisie pour le Mot de passe -->
           <div class="mb-3">
             <label for="password" class="form-label"><b>Mot de passe :</b></label>
             <input type="password" class="form-control" id="password" name="motPasse"
@@ -65,14 +65,14 @@
             </div>
           </div>
 
-          <!-- Role -->
+          <!-- Role utilisateur  -->
           <div class="mb-3">
             <input type="hidden" class="form-control" id="role" name="role"
               [(ngModel)]="utilisateur.role"  >
              
           </div>
 
-          <!-- Bouton -->
+          <!-- Bouton assure la confirmation -->
           <div class="mt-3 text-end">
             <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Valider</button>
           </div>

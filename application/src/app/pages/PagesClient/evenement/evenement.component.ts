@@ -1,3 +1,4 @@
+//importation
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Categorie } from 'src/app/monClass/categorie';
@@ -16,7 +17,7 @@ this.router.navigate(['/detailEvenement',{id}])
 }
   listCategory: Categorie[];
   listEvenement: Evenement[];
-    constructor(private catService:CategorieService ,  private router:Router , private evnService: EvenementService ){}
+    constructor(private catService:CategorieService ,  private router:Router , private evnService: EvenementService ){} //constructeur
   
     // recuperer liste de tout les categorie
   ngOnInit(): void {  
@@ -24,6 +25,7 @@ this.router.navigate(['/detailEvenement',{id}])
         this.listCategory = rep
         
       })
+      // recuperer liste de tout les evenement
       this.evnService.listEvenement().subscribe((rep:Evenement[])=>{ 
         this.listEvenement = rep
 

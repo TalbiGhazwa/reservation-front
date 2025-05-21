@@ -19,14 +19,14 @@ export class InscriptionComponent {
 
 constructor(private autorisationService : AutorisationService, private router : Router){}
 
-Remplissages():void {
+Remplissages():void { 
   this.autorisationService.remplissage(this.utilisateur).subscribe({
     next: ()=>{
       alert('inscription enregistrer avec succée')
-      this.router.navigate(['/connexion'])
+      this.router.navigate(['/connexion']) // navigation vers page
     },
     error: (erreur) =>{
-      console.log(erreur)
+     // console.log(erreur)
       alert(erreur.error.error || 'Une erreur est se produit');
       
 

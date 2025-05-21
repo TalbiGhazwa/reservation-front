@@ -33,13 +33,7 @@ intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> 
       })
     );
   }
-  
-       
-   
-   
-    
-
-    private addToken(request:HttpRequest<any>, token:string){
+    private addToken(request:HttpRequest<any>, token:string){ // ajout token
         return request.clone(
             {
                 setHeaders:{

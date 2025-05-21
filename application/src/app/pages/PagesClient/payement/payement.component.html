@@ -1,14 +1,19 @@
+<div class="container">
+  <div class="col-md-12 mt-5">
+    <div class="container">
 <div class="mb-4">
   <!-- recuperer information d'utilisateur-->
-  <h5>Informations de l'utilisateur :</h5>
+  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+      <h2>Informations de l'utilisateur :</h2>
   <p><strong>Nom :</strong> {{ utilisateur.nom }}</p>
   <p><strong>Prénom :</strong> {{ utilisateur.prenom }}</p>
   <p><strong>Email :</strong> {{ utilisateur.email }}</p>
 </div>
-
+</div>
 <div class="mb-4">
   <!-- recuperer detail sur la commande a payer -->
-  <h5>Commandes :</h5>
+    <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+      <h2>Commandes :</h2>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let commande of commandes">
       Commande N°{{ commande.commande_id }} - Total : {{ commande.total }} £
@@ -16,10 +21,13 @@
   </ul>
   <p><strong>Total a payer :</strong> {{ getTotal() }} £</p>
 </div>
-
+</div>
+</div>
+<div class="container">
 <!-- Formulaire paiement -->
+ <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+      <h2>Formulaire de paiement :</h2>
 <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" novalidate>
-  <h5>Formulaire de paiement :</h5>
 
   <div class="mb-3">
     <!-- controle de saisie pour le nom sur la carte-->
@@ -33,9 +41,9 @@
   <div class="mb-3">
     <!-- controle de saisie de numéro de carte -->
     <label for="cardNumber" class="form-label">Numéro de carte :</label>
-    <input id="cardNumber" class="form-control" formControlName="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" />
+    <input id="cardNumber" class="form-control" formControlName="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" />
     <div *ngIf="submitted && paymentForm.controls?.['cardNumber']?.['invalid']" class="text-danger">
-      Le numéro de carte est obligatoire et doit contenir 16 chiffres.
+      Le numéro de carte obligatoire et doit contenir 16 chiffres.
     </div>
   </div>
 
@@ -57,11 +65,15 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Payer et Générer QR PDF</button>
+  <button type="submit" class="btn btn-primary">Payer et Générer QR PDF</button> <!--bouton confirmation payement-->
 </form>
+ </div>
+</div>
+</div>
 
 <!-- QR Code et telechargement -->
 <div id="qrCodeContainer" class="text-center mt-4" *ngIf="qrImageUrl">
   <h5>QR Code :</h5>
   <img [src]="qrImageUrl" alt="QR Code" />
+</div>
 </div>

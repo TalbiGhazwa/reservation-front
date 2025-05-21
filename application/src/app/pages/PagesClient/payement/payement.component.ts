@@ -41,7 +41,6 @@ export class PayementComponent implements OnInit {
       },
       error: (err) => console.error('Erreur utilisateur:', err)
     })
-
     this.commandeService.getUserCommandes().subscribe({
       next: (data) => {
         this.commandes = data
@@ -50,11 +49,10 @@ export class PayementComponent implements OnInit {
       error: (err) => console.error('Erreur commandes:', err)
     })
   }
-
   getTotal(): number {
     return this.commandes.reduce((acc, c) => acc + (c.total || 0), 0)
   }
-
+ // generation de qr code 
   async generateQrCode(): Promise<void> {
     let qrData = `Utilisateur:\n`
     qrData += `Nom: ${this.utilisateur.nom}\n`
@@ -65,8 +63,8 @@ export class PayementComponent implements OnInit {
     this.commandes.forEach((commande, index) => {
       qrData += `Commande ${index + 1}:\n`
       qrData += ` ID: ${commande.commande_id}\n`
-      qrData += ` Total: ${commande.total || 0} TND\n\n`
-    });
+      qrData += ` Total: ${commande.total || 0} £\n\n`
+    })
 
     try {
       this.qrImageUrl = await QRCode.toDataURL(qrData)
@@ -74,8 +72,8 @@ export class PayementComponent implements OnInit {
       console.error('Erreur QR:', err)
     }
   }
-
-  downloadQr(): void {
+// telechargement de qr code
+  downloadQr(): void { 
     const pdf = new jsPDF()
     const margin = 10
     const size = 100
@@ -109,7 +107,6 @@ export class PayementComponent implements OnInit {
     this.paymentForm.reset()
     this.submitted = false
 
-this.http.delete('http://localhost:5000/api/commande/supprimer')
  }
  
 

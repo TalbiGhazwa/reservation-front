@@ -11,7 +11,7 @@
 npm-debug.log
 yarn-error.log
 
-# IDEs and editors
+# IDEs et editors
 .idea/
 .project
 .classpath
@@ -20,7 +20,7 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
+# code Visual Studio 
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -37,6 +37,6 @@ yarn-error.log
 testem.log
 /typings
 
-# System files
+# Fichiers système
 .DS_Store
 Thumbs.db

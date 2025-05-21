@@ -1,3 +1,4 @@
+// les var d'environnement
 export const environnement = {
     urlpath : "http://localhost:5000/api/public",
     urlAdmin : "http://localhost:5000/api/admin",

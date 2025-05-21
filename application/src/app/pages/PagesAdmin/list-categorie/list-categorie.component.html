@@ -8,9 +8,8 @@
     </div>
     <div class="col-4"></div>
   </div>
-
-    <table class="table table-striped table-hover table-bordered mt-5"> 
-
+    <!-- insertion table contient les categorie disponible -->
+    <table class="table table-striped table-hover table-bordered">
         <thead class="table-success">
           <tr>
             <th scope="col">id</th>
@@ -19,31 +18,27 @@
             <th>Action</th>
             <th>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-Ajouter Categorie          
-    </button>
+              Ajouter Categorie          
+               </button>
             </th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody> <!-- remplir le tableau par id et nom categori exste-->
           <tr *ngFor="let c of listCategory">
             <th scope="row">{{c.id}}</th>
             <td>{{c.nomCategori}}</td>
             
-          
-            <td>
+            <td> <!-- inserer des bouton assure la modification et suppression d'un categorie par identifiant-->
                 <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="updateCat(c.id)"> modifier </button>
                 <button class="btn btn-danger me-2" (click)="deleteCat(c.id)"> supprimer </button>
             </td>
-          </tr>
-        
-          
+          </tr>         
         </tbody>
       </table>
 </div>
 
-<!-- Modal -->
-
+<!-- inserer un modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -73,13 +68,12 @@ Ajouter Categorie
       </div>
 
       <div class="modal-body">
-
+        <!-- inserer un formulaire a remplir par des modification souhaité -->
         <form #form ="ngForm" (ngSubmit)="modifierCat(form)">
           <label>Nom Categorie</label>
           <input class="form-control" type="text" name="nomCat" [(ngModel)]="updatedCat.nomCategori">
           <button type="submit" class="btn btn-success mt-2"> Modifier </button>
-        </form>
-        
+        </form>        
       </div>
     </div>
   </div>

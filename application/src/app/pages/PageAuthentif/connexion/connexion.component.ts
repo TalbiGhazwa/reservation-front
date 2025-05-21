@@ -16,7 +16,7 @@ export class ConnexionComponent {
 
   constructor(private autorisationService: AutorisationService, private router: Router) { }
 
-  //vérification du role lors du connexion (administrateur ou client)
+  //vérification le role lors du connexion (administrateur ou client)
   
   toConnect(form: NgForm): void {
     this.autorisationService.connexion(form.value).subscribe((data: any) => {
@@ -26,12 +26,12 @@ export class ConnexionComponent {
       const access_token = this.autorisationService.getRole()
       const role = this.autorisationService.getToken()
 
-      if (access_token && role) {
+      if (access_token && role) { // accée en cas d'authentif correcte
         alert("Bienvenue !!")
         this.router.navigate(['/'])
       }
       else {
-        alert("veuiller verifier votre email ou mot de passe !! ")
+        alert("veuiller verifier votre email ou mot de passe !! ") // refus en cas d'authentif incorrecte
         this.router.navigate(['/login'])
       }
     })

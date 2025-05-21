@@ -1,65 +1,59 @@
 <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-4">
-
-        <img src="../../../../assets/images/photo2JO.jpg"
-             class="img-fluid rounded shadow-sm" alt="Image d'évènement">
-      </div>
-  
-      <!--  Detaille évènement  -->
-      <div class="col-md-7">
-        <div class="event-details p-4 bg-white rounded shadow-sm">
-          <h3 class="text-primary mb-3">{{ event.nomEvenement }}</h3>
-           <p><strong>Date évènement :</strong> {{ event.dateEvenement| date:'dd-MM-yyyy' }}</p>
-          <p><strong>Type :</strong> {{ event.typeEvenement }}</p>
-          <p><strong>Prix :</strong> {{ event.PrixEvenement }} £</p>
-          
-          <!-- Input et Bouton Ticket-->
-          <!-- Bouton Acheter -->
-<div class="d-flex align-items-center">
-  <input [(ngModel)]="quantite" type="number" class="form-control w-50 me-3" placeholder="Quantité" min="1" />
-  <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#typeTicketModal">
-    Acheter
-  </button>
-</div>
-
-<!-- Modal pour sélectionner le type de ticket -->
-<div class="modal fade" id="typeTicketModal" tabindex="-1" aria-labelledby="typeTicketModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title">Choisir un type de ticket</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-      </div>
-
-     <div class="modal-body">
-  <div class="mb-3">
-    <label for="ticketTypeSelect" class="form-label">Sélectionner un type de ticket</label>
-    <select class="form-select" id="ticketTypeSelect" [(ngModel)]="selectedTicketTypeNom">
-      <option *ngFor="let type of predefinedTicketTypes" [value]="type.nom">
-        {{ type.nom }} - {{ type.prix }} £
-      </option>
-    </select>
-  </div>
-</div>
-
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" (click)="ajouterAuPanier()" data-bs-dismiss="modal">
-          Confirmer l'achat
-        </button>
-      </div>
-
+  <div class="row">
+    <div class="col-md-4">
+      <!--insertion image d'evenement selectionnée -->
+      <img src="../../../../assets/images/photo2JO.jpg" class="img-fluid rounded shadow-sm" alt="Image d'évènement">
     </div>
-  </div>
-</div>
 
+    <!--  Detaille évènement  -->
+    <div class="col-md-7">
+      <div class="event-details p-4 bg-white rounded shadow-sm">
+        <h3 class="text-primary mb-3">{{ event.nomEvenement }}</h3>
+        <p><strong>Type :</strong> {{ event.typeEvenement }}</p>
+        <p><strong>Date évènement :</strong> {{ event.dateEvenement| date:'dd-MM-yyyy' }}</p>
+        <!--<p><strong>Prix :</strong> {{ event.PrixEvenement }} £</p> -->
+
+        <!-- Bouton Acheter -->
+        <div class="d-flex align-items-center">
+           <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#typeTicketModal">
+            Acheter
+          </button>
         </div>
+
+        <!-- Modal pour sélectionner le type de ticket  solo, duo, familial-->
+        <div class="modal fade" id="typeTicketModal" tabindex="-1" aria-labelledby="typeTicketModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">Choisir un type de ticket</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+              </div>
+
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="ticketTypeSelect" class="form-label">Sélectionner un type de ticket</label>
+                  <select class="form-select" id="ticketTypeSelect" [(ngModel)]="selectedTicketTypeNom">
+                    <option *ngFor="let type of predefinedTicketTypes" [value]="type.nom">
+                      {{ type.nom }} - {{ type.prix }} £
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <!-- insrer des bouton pour confirmer ou annuler les achats-->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" (click)="ajouterAuPanier()" data-bs-dismiss="modal">
+                  Confirmer l'achat
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  
-    
   </div>
-  
+</div>
