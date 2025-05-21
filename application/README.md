@@ -19,11 +19,11 @@
 
 <br>
 
-## :dart: About ##
+## About ##
 
 Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs Jeux Olympique JO-2025.
 
-## :sparkles: Features ##
+##  Features ##
 
 :heavy_check_mark: Gestion evenement;\
 :heavy_check_mark: Gestion categorties ;\
@@ -31,7 +31,7 @@ Un projet de reservation billeterie, c'est une application web assure la reserva
 :heavy_check_mark: Gestion de payement ;\
 :heavy_check_mark: Gestion de génération des billets ;\
 
-## :rocket: Technologies ##
+## Technologies ##
 
 The following tools were used in this project:
 
@@ -41,11 +41,11 @@ The following tools were used in this project:
 - [Bootstrap](https://getbootstrap.com/)
 - [Angular Material ](https://material.angular.dev/ ) 
 
-## :white_check_mark: Requirements ##
+##  Requirements ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-## :checkered_flag: Starting ##
+##  Starting ##
 
 ```bash
 # Cloner le projet

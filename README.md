@@ -1,10 +1,10 @@
 <h1 align="center">Reservation E_ticket</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/https://github.com/TalbiGhazwa/reservation-front?color=56BEB8">
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/https://github.com/TalbiGhazwa/reservation-front?color=56BEB8">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/https://github.com/TalbiGhazwa/reservation-front?color=56BEB8">
-  <img alt="License" src="https://img.shields.io/github/license/https://github.com/TalbiGhazwa/reservation-front?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/reservation-front?color=56BEB8">
 </p>
 
 <p align="center">
@@ -19,12 +19,11 @@
 
 <br>
 
-## :dart: About ##
+## About ##
 
+Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs Jeux Olympique JO-2025.
 
-Un projet de reservation billeterie, c'est une application web assure la reservation des  E_tickets pour un évènement sportifs JO.
-
-## :sparkles: Features ##
+##  Features ##
 
 :heavy_check_mark: Gestion evenement;\
 :heavy_check_mark: Gestion categorties ;\
@@ -32,7 +31,7 @@ Un projet de reservation billeterie, c'est une application web assure la reserva
 :heavy_check_mark: Gestion de payement ;\
 :heavy_check_mark: Gestion de génération des billets ;\
 
-## :rocket: Technologies ##
+## Technologies ##
 
 The following tools were used in this project:
 
@@ -42,26 +41,26 @@ The following tools were used in this project:
 - [Bootstrap](https://getbootstrap.com/)
 - [Angular Material ](https://material.angular.dev/ ) 
 
-## :white_check_mark: Requirements ##
+##  Requirements ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-## :checkered_flag: Starting ##
+##  Starting ##
 
 ```bash
-# Clone this project
+# Cloner le projet
 $ git clone https://github.com/TalbiGhazwa/reservation-front
 
-# Access
+# Accée
 $ cd reservation-front
 
-# Install dependencies
+# Installé les dependences
 $ npm i
 
-# Run the project
+# Run le projet
 $ ng s
 
-# The server will initialize in the <http://localhost:3000>
+# Le serveur s'initialisera dans  <http://localhost:4200>
 ```
 
 ## :memo: License ##
@@ -69,8 +68,8 @@ $ ng s
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 
-Made with :heart: by <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
+Fabriqué par <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
 
 &#xa0;
 
-<a href="#top">Back to top</a>
+<a href="#top">haut de la page</a>
