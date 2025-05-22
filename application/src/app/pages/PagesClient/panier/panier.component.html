@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+<h2>Mon Panier :</h2>
+
+<div *ngIf="panierItems.length === 0" class="alert alert-info">
+  Votre panier est vide.
+</div>
+
+<div *ngFor="let item of panierItems" class="card m-2 p-3 shadow-sm">
+  <h5>Panier Item ID : {{ item.id }}</h5>
+
+  <!-- detail sur l'evenement qu'en va acheter-->
+  <h6><strong>Événement</strong></h6>
+  <ul>
+    <li><strong>Nom:</strong> {{ item.evenement.nomEvenement }}</li>
+    <li><strong>Adresse:</strong> {{ item.evenement.adresse }}</li>
+    <li><strong>Date:</strong> {{ item.evenement.dateEvenement | date:'dd/MM/yyyy' }}</li>
+    <li><strong>Type:</strong> {{ item.evenement.typeEvenement }}</li>
+    <!--<li><strong>Prix de l'événement:</strong> {{ item.evenement.PrixEvenement }} €</li>-->
+  </ul>
+
+  <!-- detail sur le type et prix ticket qu'en va acheter-->
+  <h6><strong>Ticket </strong></h6>
+  <ul>
+    <li><strong>Type:</strong> {{ item.ticket_type.nom }}</li>
+    <li><strong>Prix unitaire:</strong> {{ item.ticket_type.prix }} €</li>
+  </ul>
+
+  <p><strong>Quantité:</strong> {{ item.quantite }}</p>
+  <p><strong>Prix total:</strong> {{ item.ticket_type.prix * item.quantite }} €</p>
+</div>
+
+<!-- bouton valider pour confirmer nos achats-->
+<button (click)="validerCommande()">Valider commande</button>
+
+<p *ngIf="message">{{ message }}</p>
+</div>
+</div>

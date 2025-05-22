@@ -1,0 +1,62 @@
+<!-- la barre de navivation vers les différents épreuvent -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="color: white;">
+  <div class="container-fluid">
+    <a class="navbar-brand me-4" routerLink="/index">Jeux Olympique</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/index">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/evenement">Evenement</a>
+        </li>
+
+        <!-- barre de navigation admin -->
+        <ng-container *ngIf="autorisationService.isAdmin()">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/listeEvenement">Liste Evenement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/listeCategorie">Liste Catégorie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/listeClient">Liste Clients</a>
+          </li>
+        </ng-container>
+      </ul>
+
+      <!-- barre de navigation aux Non connecté -->
+      <ng-container *ngIf="!autorisationService.isAuthentifi(); else loggedIn">
+
+        <div class="d-flex">
+          <a class="btn btn-outline-light me-2" routerLink="/inscription">Inscription</a>
+          <a class="btn btn-outline-light" routerLink="/connexion">Connexion</a>
+        </div>
+      </ng-container>
+
+<!--pour les utilisateurs Connecté -->
+<ng-template #loggedIn>
+  <div class="d-flex align-items-center">
+    <!-- Icone panier -->
+    <a class="btn btn-outline-light position-relative me-3" routerLink="/panier">
+      <i class="bi bi-cart-fill fs-5"></i>
+      <span *ngIf="panierCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {{ panierCount }}
+        <span class="visually-hidden">articles dans le panier</span>
+      </span>
+    </a>
+
+    <!-- Bouton déconnexion -->
+    <button class="btn btn-outline-light" (click)="deconnecter()">Déconnecter</button>
+  </div>
+</ng-template>
+
+
+    </div>
+  </div>
+</nav>

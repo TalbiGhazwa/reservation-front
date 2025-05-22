@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-12 col-md-3 mb-3">
+      <div class="card-header mt-3 p-2">
+        <h2> Liste des évènements </h2>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <!-- inserer une table contient les evenement et detaille -->
+    <table class="table table-striped table-hover table-bordered">
+
+    <thead class="table-success" >
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom evénement</th>
+        <th scope="col">Date evénement</th>
+        <th scope="col"> Type evénement</th>
+        <th>Action</th>
+        <th><button mat-raised-button class="btn btn-success" (click)="ajoutEvent()">Ajout
+            evenement</button></th>
+      </tr>
+    </thead>
+    <tbody> <!-- remplissage de table par les evenement disponible deja ajouté -->
+      <tr *ngFor="let e of listEvenement">
+        <th scope="row">{{e.id}}</th>
+        <td>{{e.nomEvenement}}</td>
+        <td>{{e.dateEvenement}}</td>
+        <td>{{e.typeEvenement}}</td>
+        <td>
+
+          <button class=" btn btn-success me-2" (click)="modifEvenement(e.id)"> modifier </button> <!-- bouton assure la modification devenement par son id -->
+          <button class="btn btn-danger me-2" (click)="supprimEvent(e.id)">supprimer</button> <!-- bouton assure la sepprission devenement par son id -->
+         
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

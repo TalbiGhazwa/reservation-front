@@ -1,0 +1,43 @@
+/*  Style generale */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+  
+  .row {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* Section Image evenement */
+  .img-fluid {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+    
+ .img-fluid:hover {
+    transform: scale(1.05);
+  }
+  /*  Design Responsive*/
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-5,
+    .col-md-7 {
+      margin-bottom: 1rem;
+    }
+  
+    .event-details {
+      padding: 2rem;
+    }
+  }
+  

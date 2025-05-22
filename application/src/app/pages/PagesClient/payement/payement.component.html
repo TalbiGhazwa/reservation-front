@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="col-md-12 mt-5">
+    <div class="container">
+<div class="mb-4">
+  <!-- recuperer information d'utilisateur-->
+  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+      <h2>Informations de l'utilisateur :</h2>
+  <p><strong>Nom :</strong> {{ utilisateur.nom }}</p>
+  <p><strong>Prénom :</strong> {{ utilisateur.prenom }}</p>
+  <p><strong>Email :</strong> {{ utilisateur.email }}</p>
+</div>
+</div>
+<div class="mb-4">
+  <!-- recuperer detail sur la commande a payer -->
+    <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+      <h2>Commandes :</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let commande of commandes">
+      Commande N°{{ commande.commande_id }} - Total : {{ commande.total }} £
+    </li>
+  </ul>
+  <p><strong>Total a payer :</strong> {{ getTotal() }} £</p>
+</div>
+</div>
+</div>
+<div class="container">
+<!-- Formulaire paiement -->
+ <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+      <h2>Formulaire de paiement :</h2>
+<form [formGroup]="paymentForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <div class="mb-3">
+    <!-- controle de saisie pour le nom sur la carte-->
+    <label for="cardName" class="form-label">Nom sur la carte :</label>
+    <input id="cardName" class="form-control" formControlName="cardName" placeholder="Nom complet" />
+    <div *ngIf="submitted && paymentForm.controls?.['cardName']?.['invalid']" class="text-danger">
+      Le nom sur la carte est obligatoire.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <!-- controle de saisie de numéro de carte -->
+    <label for="cardNumber" class="form-label">Numéro de carte :</label>
+    <input id="cardNumber" class="form-control" formControlName="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" />
+    <div *ngIf="submitted && paymentForm.controls?.['cardNumber']?.['invalid']" class="text-danger">
+      Le numéro de carte obligatoire et doit contenir 16 chiffres.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <!-- controle de saisie date expiration de la carte-->
+    <label for="expiry" class="form-label">Date d'expiration (MM/AA)</label>
+    <input id="expiry" class="form-control" formControlName="expiry" placeholder="MM/AA" maxlength="5" />
+    <div *ngIf="submitted && paymentForm.controls?.['expiry']?.['invalid']" class="text-danger">
+      La date d'expiration est obligatoire et doit être au format MM/AA.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <!-- controle de saisie de cvv-->
+    <label for="cvv" class="form-label">CVV</label>
+    <input id="cvv" class="form-control" formControlName="cvv" placeholder="123" maxlength="3" />
+    <div *ngIf="submitted && paymentForm.controls?.['cvv']?.['invalid']" class="text-danger">
+      Le CVV est obligatoire et doit contenir 3 chiffres.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Payer et Générer QR PDF</button> <!--bouton confirmation payement-->
+</form>
+ </div>
+</div>
+</div>
+
+<!-- QR Code et telechargement -->
+<div id="qrCodeContainer" class="text-center mt-4" *ngIf="qrImageUrl">
+  <h5>QR Code :</h5>
+  <img [src]="qrImageUrl" alt="QR Code" />
+</div>
+</div>
