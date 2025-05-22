@@ -1,12 +1,12 @@
 // les var d'environnement
 export const environnement = {
-    urlpath : "http://localhost:5000/api/public",
-    urlAdmin : "http://localhost:5000/api/admin",
-    autorisationURL : 'http://localhost:5000/api',
+    urlpath : "https://pythonapp-nov7.onrender.com/api/public",
+    urlAdmin : "https://pythonapp-nov7.onrender.com/api/admin",
+    autorisationURL : 'https://pythonapp-nov7.onrender.com/api',
    // autorisationURL : 'https://reservation-ccit.onrender.com/api'
   // urlpath : "https://reservation-ccit.onrender.com/api/public",
    // urlAdmin : "https://reservation-ccit.onrender.com/api/admin",
    // API_URL : "https://reservation-ccit.onrender.com/api/commandePanier",
-    API_URL : 'http://localhost:5000/api/commandePanier'
+    API_URL : 'https://pythonapp-nov7.onrender.com/api/commandePanier'
 
 }
