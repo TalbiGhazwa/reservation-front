@@ -74,7 +74,6 @@ ajoutCategorie(form:NgForm) { // fn ajout categori
       alert('category ajoutée avec succée') // message de succée de modification
         this.listCat()
 
-      location.reload() // actualisation
       this.msgErreur = '' //clear
     },
 
