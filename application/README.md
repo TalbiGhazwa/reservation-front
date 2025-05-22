@@ -43,7 +43,7 @@ The following tools were used in this project:
 
 ##  Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+ Avant de commencer, vous devez avoir un [Git](https://git-scm.com) et [Node](https://nodejs.org/en/) installer.
 
 ##  Starting ##
 
@@ -62,12 +62,6 @@ $ ng s
 
 # Le serveur s'initialisera dans  <http://localhost:4200>
 ```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
-
-
 Fabriqué par <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
 
 &#xa0;

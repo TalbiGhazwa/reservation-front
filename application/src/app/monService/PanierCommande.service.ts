@@ -53,18 +53,13 @@ export class PanierCommandeService {
             headers: this.getHeaders()
         });
     }
-
- 
-
     // Récupérer les items du panier
-
     getPanier(): Observable<PanierItem[]> {
         return this.http.get<PanierItem[]>(`${this.API_URL}/view`, {
             headers: this.getHeaders()
         })
     }
     // Valider et payer la commande 
-
     validerCommande(): Observable<any> {
         return this.http.post(`${this.API_URL}/valider_commande`, {}, {
             headers: this.getHeaders()

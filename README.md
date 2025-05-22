@@ -62,12 +62,6 @@ $ ng s
 
 # Le serveur s'initialisera dans  <http://localhost:4200>
 ```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
-
-
 Fabriqué par <a href="https://github.com/TalbiGhazwa" target="_blank">TALBI Ghazwa</a>
 
 &#xa0;

@@ -9,9 +9,6 @@ import { environnement } from '../environnement/environnement';
 export class UtilisateurService {
   
   constructor(private http : HttpClient) { }
-
-
-
   //gestion d'erreur
   private gestionErreur(erreur:HttpErrorResponse){
     let msgErreur = 'erreur inconnu'
