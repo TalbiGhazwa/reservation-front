@@ -17,7 +17,6 @@
         <th scope="col">Nom evénement</th>
         <th scope="col">Date evénement</th>
         <th scope="col"> Type evénement</th>
-        <th scope="col">Prix</th>
         <th>Action</th>
         <th><button mat-raised-button class="btn btn-success" (click)="ajoutEvent()">Ajout
             evenement</button></th>
@@ -29,7 +28,6 @@
         <td>{{e.nomEvenement}}</td>
         <td>{{e.dateEvenement}}</td>
         <td>{{e.typeEvenement}}</td>
-        <td>{{e.PrixEvenement}}</td>
         <td>
 
           <button class=" btn btn-success me-2" (click)="modifEvenement(e.id)"> modifier </button> <!-- bouton assure la modification devenement par son id -->

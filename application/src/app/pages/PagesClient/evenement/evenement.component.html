@@ -29,7 +29,6 @@
                               <strong class="text-dark">Type :</strong> <i>{{ e.typeEvenement }}</i><br>
                               <strong class="text-dark">Date :</strong> <i>{{ e.dateEvenement | date:'dd/MM/yyyy' }}</i><br>
                               <strong class="text-dark">Categorie  :</strong> <i>{{ e.categorie.nomCategori }}</i><br>
-                               <strong class="text-dark">Prix à partir de :</strong> <i>{{ e.PrixEvenement }} £</i><br>
                             </p>
                             <a (click)="goToDetailsEvent(e.id)" class="btn btn-primary w-100">
                               Voir Plus..
