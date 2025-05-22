@@ -30,6 +30,7 @@ export class PanierComponent implements OnInit {
       this.router.navigate(['/payer'])
     },
     error: err => {
+      console.log(err)
       this.message = err.error?.erreur || 'Erreur lors de la validation'
     }
   })
