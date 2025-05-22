@@ -31,7 +31,7 @@ export class PanierComponent implements OnInit {
     },
     error: err => {
       console.log(err)
-      this.message = err.error?.erreur || 'Erreur lors de la validation'
+      this.message = err.error.erreur  
     }
   })
 }
