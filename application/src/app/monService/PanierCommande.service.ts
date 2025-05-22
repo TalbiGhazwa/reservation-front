@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core'
 import { map, Observable } from 'rxjs'
 import { PanierItem } from '../monClass/PanierItem'
 import { Commande } from '../monClass/Commande'
+import { environnement } from '../environnement/environnement';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class PanierCommandeService {
-    API_URL = 'http://localhost:5000/api/commandePanier'
 
 
 
@@ -26,13 +26,13 @@ export class PanierCommandeService {
         const token = localStorage.getItem('token')
         const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
 
-        return this.http.get<Commande[]>(this.API_URL + "/commande/info", { headers })
+        return this.http.get<Commande[]>(environnement.API_URL + "/commande/info", { headers })
     }
     getUtilisateur(): Observable<any> {
-        return this.http.get<any>(`${this.API_URL}/utilisateur/info`)
+        return this.http.get<any>(`${environnement.API_URL}/utilisateur/info`)
     }
     getPanierCount(): Observable<number> {
-        return this.http.get<{ count: number }>(`${this.API_URL + "/count"}`)
+        return this.http.get<{ count: number }>(`${environnement.API_URL + "/count"}`)
             .pipe(map(response => response.count))
     }
 
@@ -49,19 +49,19 @@ export class PanierCommandeService {
             quantite
         };
 
-        return this.http.post(this.API_URL, data, {
+        return this.http.post(environnement.API_URL, data, {
             headers: this.getHeaders()
         });
     }
     // Récupérer les items du panier
     getPanier(): Observable<PanierItem[]> {
-        return this.http.get<PanierItem[]>(`${this.API_URL}/view`, {
+        return this.http.get<PanierItem[]>(`${environnement.API_URL}/view`, {
             headers: this.getHeaders()
         })
     }
     // Valider et payer la commande 
     validerCommande(): Observable<any> {
-        return this.http.post(`${this.API_URL}/valider_commande`, {}, {
+        return this.http.post(`${environnement.API_URL}/valider_commande`, {}, {
             headers: this.getHeaders()
         });
     }
