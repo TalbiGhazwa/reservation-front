@@ -61,7 +61,7 @@ export class PanierCommandeService {
     }
     // Valider et payer la commande 
     validerCommande(): Observable<any> {
-        return this.http.post(`${environnement.API_URL}/valider_commande`, {}, {
+        return this.http.post(`${environnement.API_URL}/valider`, {}, {
             headers: this.getHeaders()
         });
     }
